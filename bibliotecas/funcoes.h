@@ -7,16 +7,29 @@
 #define LED_R 13
 #define BUTTON_A_PIN 5
 
+// GPIO para eixo X, eixo Y e botão do Joystick
+#define JOYSTICK_X_PIN 26
+#define JOYSTICK_Y_PIN 27
+#define JOYSTICK_PB 22
+
+// Definição para comunicação I2C
+#define I2C_PORT i2c1
+#define I2C_SDA 14
+#define I2C_SCL 15
+#define endereco 0x3C
+
 // Definição de valores para PWM
-const uint16_t WRAP_PERIOD = 4000; //valor máximo do contador - WRAP
-const float PWM_DIVISER = 4.0; //divisor do clock para o PWM
-const uint16_t LED_STEP = 200; //passo de incremento/decremento para o duty cycle do LED
-uint16_t led_level = 200; //nível inicial do pwm (duty cycle)
+extern const uint16_t WRAP_PERIOD;
+extern const float PWM_DIVISER;
+extern const uint16_t LED_STEP;
+extern uint16_t led_level;
 
 // inicialização dos pinos dos componentes
 void setup();
 
 //função para configurar o módulo PWM
 void pwm_setup();
+
+void adc_setup();
 
 #endif

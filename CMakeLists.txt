@@ -45,7 +45,7 @@ pico_enable_stdio_uart(Atividade_Conversores_AD 1)
 pico_enable_stdio_usb(Atividade_Conversores_AD 1)
 
 # Adiciona a biblioteca padrão pico_stdlib
-target_link_libraries(Atividade_Conversores_AD pico_stdlib hardware_i2c hardware_pwm)
+target_link_libraries(Atividade_Conversores_AD pico_stdlib hardware_i2c hardware_pwm hardware_adc)
 
 # Adiciona o diretório de cabeçalhos
 target_include_directories(Atividade_Conversores_AD PRIVATE bibliotecas)
