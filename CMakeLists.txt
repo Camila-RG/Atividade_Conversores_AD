@@ -20,7 +20,7 @@ project(Atividade_Conversores_AD C CXX ASM)
 pico_sdk_init()
 
 # Adiciona os arquivos executáveis
-add_executable(Atividade_Conversores_AD Atividade_Conversores_AD.c bibliotecas/funcoes.c)
+add_executable(Atividade_Conversores_AD Atividade_Conversores_AD.c bibliotecas/funcoes.c bibliotecas/ssd1306.c)
 
 # Configura o nome e versão do programa
 pico_set_program_name(Atividade_Conversores_AD "Atividade_Conversores_AD")
@@ -31,7 +31,7 @@ pico_enable_stdio_uart(Atividade_Conversores_AD 1)
 pico_enable_stdio_usb(Atividade_Conversores_AD 1)
 
 # Adiciona a biblioteca padrão pico_stdlib
-target_link_libraries(Atividade_Conversores_AD pico_stdlib)
+target_link_libraries(Atividade_Conversores_AD pico_stdlib hardware_i2c)
 
 # Adiciona o diretório de cabeçalhos
 target_include_directories(Atividade_Conversores_AD PRIVATE bibliotecas)

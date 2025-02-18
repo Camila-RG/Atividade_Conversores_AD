@@ -1,5 +1,6 @@
 #include "funcoes.h"
 #include "pico/stdlib.h"
+#include "hardware/i2c.h"
 
 // inicialização dos pinos dos componentes
 void setup(){
