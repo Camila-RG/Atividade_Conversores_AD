@@ -6,6 +6,7 @@
 int main()
 {
     stdio_init_all();
+    pwm_setup();
     setup();
 
     while (true) {

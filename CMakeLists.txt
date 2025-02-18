@@ -1,3 +1,17 @@
+# == DO NOT EDIT THE FOLLOWING LINES for the Raspberry Pi Pico VS Code Extension to work ==
+if(WIN32)
+    set(USERHOME $ENV{USERPROFILE})
+else()
+    set(USERHOME $ENV{HOME})
+endif()
+set(sdkVersion 2.1.0)
+set(toolchainVersion 13_3_Rel1)
+set(picotoolVersion 2.1.0)
+set(picoVscode ${USERHOME}/.pico-sdk/cmake/pico-vscode.cmake)
+if (EXISTS ${picoVscode})
+    include(${picoVscode})
+endif()
+# ====================================================================================
 cmake_minimum_required(VERSION 3.13)
 
 set(CMAKE_C_STANDARD 11)
@@ -31,7 +45,7 @@ pico_enable_stdio_uart(Atividade_Conversores_AD 1)
 pico_enable_stdio_usb(Atividade_Conversores_AD 1)
 
 # Adiciona a biblioteca padrão pico_stdlib
-target_link_libraries(Atividade_Conversores_AD pico_stdlib hardware_i2c)
+target_link_libraries(Atividade_Conversores_AD pico_stdlib hardware_i2c hardware_pwm)
 
 # Adiciona o diretório de cabeçalhos
 target_include_directories(Atividade_Conversores_AD PRIVATE bibliotecas)
